@@ -1,0 +1,233 @@
+.brygge-logo {
+    font-family: Georgia, Helvetica, Arial, sans-serif;
+    margin-bottom: 0.75rem;
+  }
+  
+  .intro-message {
+    font-size: 1.15rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background-color: rgb(238, 236, 248);
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-container {
+    max-width: 480px;
+    margin: auto;
+    padding: 2rem 0 5rem;
+  }
+  
+  form {
+    width: 100%;
+  }
+  
+  label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1rem;
+    margin-bottom: 4px;
+  }
+  
+  input,
+  fieldset {
+    font-size: 1rem;
+    font-weight: 400;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    margin-top: 0;
+    width: 100%;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgb(214, 214, 214);
+  }
+
+  select {
+    font-size: inherit;
+    border-radius: 5px;
+    border: 2px solid rgb(214, 214, 214);
+    padding: 1rem 1rem 1.3rem 0.3rem;
+  }
+
+  /* input[type=checkbox] {
+    transform: scale(1.5);
+} */
+
+  .input-wrapper {
+    margin-bottom: 1rem;
+  }
+
+  fieldset input {
+    width: auto;
+  }
+
+  fieldset label {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  button {
+    background-color: #ddb141;
+    width: 100%;
+    min-width: 64px;
+    cursor: pointer;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 20px;
+    vertical-align: middle;
+    padding: 25px 32px 21px;
+    margin-top: 1rem;
+    border: 0px;
+  }
+  
+  button:hover {
+    background-color: #d19706;
+  }
+
+  .birthday-wrapper {
+    display: flex;
+    flex-wrap: wrap
+  }
+
+  .day {
+    width: 20%;
+  }
+
+  .month {
+    width: 50%;
+    padding-left: 6px;
+  }
+
+  .year {
+    width: 30%;
+    padding-left: 6px;
+  }
+
+  .day, .month, .year {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .birthday-label {
+    margin: 4px;
+  }
+  
+  .error-message {
+    color: rgb(198, 42, 42);
+    margin: 3px 4px 0px;
+    width: 100%;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .error-border {
+    border-color: rgb(198, 42, 42);
+  }
+  
+  .further-infos-wrapper {
+    padding-left: 1rem;
+    margin: 2rem 0;
+  }
+  
+  .further-infos {
+    margin: 0.5rem 0;
+  }
+  
+  /* START - Media Queries*/
+  @media only screen and (min-width: 1024px) {
+    .brygge-logo {
+      margin-bottom: 1rem;
+    }
+  
+    .intro-message {
+      font-size: 1.35rem;
+    }
+  
+    label {
+      font-size: 1.25rem;
+      line-height: 1.25rem;
+      margin-bottom: 4px;
+      padding-left: 4px;
+    }
+  
+    button {
+      width: auto;
+      font-size: 1.25rem;
+      padding: 30px 48px 22px;
+    }
+  
+    .form-container {
+      max-width: 640px;
+    }
+  
+    .error-message {
+      font-size: 1.25rem;
+    }
+  }
+  
+  /* END - Media Queries*/
+  
+  /* START - Password validation Styles */
+  .password-rules-heading {
+    margin: 3px 4px 0px;
+  }
+  
+  .password-message-visible {
+    display: block;
+  }
+  
+  .password-message-invisible {
+    display: none;
+
+  }
+
+  .hide {
+    height: 0.2px;
+    overflow: hidden;
+  }
+
+  .show {
+    height: auto;
+  }
+  
+  .password-valid,
+  .password-invalid {
+    margin: 4px 0;
+  }
+  
+  .password-valid:last-child,
+  .password-invalid:last-child {
+    margin-bottom: 18px;
+  }
+  
+  .password-valid {
+    color: green;
+  }
+  
+  .password-valid:before {
+    position: relative;
+    margin-right: 4px;
+    content: "✔";
+  }
+  
+  .password-invalid {
+    color: red;
+  }
+  
+  .password-invalid:before {
+    position: relative;
+    margin-right: 5px;
+    content: "✖";
+  }
+  /* END - Password validation Styles */
+  
+  .toggle-mimic {
+    text-decoration: underline;
+    text-decoration-color: rgb(0, 0, 238);
+    color: rgb(0, 0, 238);
+    cursor: pointer;
+  }
