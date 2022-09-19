@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/brygge-test-task/static/css/main.45715e9e.css",
+    "main.js": "/brygge-test-task/static/js/main.09ec8457.js",
+    "static/js/787.16dcf47e.chunk.js": "/brygge-test-task/static/js/787.16dcf47e.chunk.js",
+    "index.html": "/brygge-test-task/index.html",
+    "main.45715e9e.css.map": "/brygge-test-task/static/css/main.45715e9e.css.map",
+    "main.09ec8457.js.map": "/brygge-test-task/static/js/main.09ec8457.js.map",
+    "787.16dcf47e.chunk.js.map": "/brygge-test-task/static/js/787.16dcf47e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.45715e9e.css",
+    "static/js/main.09ec8457.js"
+  ]
+}
