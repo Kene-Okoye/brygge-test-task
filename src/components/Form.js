@@ -7,7 +7,6 @@ function Form() {
 
   const toggleForm = () => {
     setisFormActive(!isFormActive);
-    console.log(isFormActive);
   };
 
   return (

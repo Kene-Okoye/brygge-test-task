@@ -2,10 +2,19 @@ import React, { useState } from "react";
 import "../Form.css";
 
 function LoginForm({ goToRegistration }) {
+  const [isUserNameValid, setisUserNameValid] = useState(false);
+  const [isUserNameFocused, setIsUserNameFocused] = useState(false);
   const [loginData, setloginData] = useState({
     userName: "",
     password: "",
   });
+
+  const handleEmailValidation = () => {
+    const emailCheck = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(
+      loginData.userName
+    );
+    setisUserNameValid(emailCheck);
+  };
 
   const [touchedField, setTouchedField] = useState({
     isTouchedUserName: false,
@@ -49,6 +58,8 @@ function LoginForm({ goToRegistration }) {
                 ? "error-border"
                 : ""
             }
+            onKeyUp={handleEmailValidation}
+            onFocus={() => setIsUserNameFocused(true)}
             onChange={(e) =>
               setloginData({ ...loginData, userName: e.target.value })
             }
@@ -62,7 +73,8 @@ function LoginForm({ goToRegistration }) {
           <p
             id="user-name-message"
             className={`error-message ${
-              touchedField.isTouchedUserName && loginData.userName < 1
+              (isUserNameFocused && !isUserNameValid) ||
+              (touchedField.isTouchedUserName && loginData.userName < 1)
                 ? "show"
                 : "hide"
             }`}

@@ -13,6 +13,8 @@ export default function RegistrationForm({ goToLogin }) {
     password: "",
     passwordRepeat: "",
   });
+  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [isEmailFocused, setIsEmailFocused] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [touchedField, setTouchedField] = useState({
     isTouchedSalutation: false,
@@ -50,6 +52,13 @@ export default function RegistrationForm({ goToLogin }) {
     });
   };
 
+  const handleEmailValidation = () => {
+    const emailCheck = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(
+      formData.email
+    );
+    setIsEmailValid(emailCheck);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(
@@ -75,7 +84,7 @@ export default function RegistrationForm({ goToLogin }) {
         <div className="input-wrapper">
           {/* BIRTHDAY */}
           <fieldset>
-            <legend>Genurtsdatum (erforderlich)</legend>
+            <legend>Geburtsdatum (erforderlich)</legend>
             <div className="birthday-wrapper">
               {/* DAY */}
               <div className="day">
@@ -311,6 +320,8 @@ export default function RegistrationForm({ goToLogin }) {
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
+            onKeyUp={handleEmailValidation}
+            onFocus={() => setIsEmailFocused(true)}
             onBlur={() => {
               setTouchedField({
                 ...touchedField,
@@ -321,7 +332,8 @@ export default function RegistrationForm({ goToLogin }) {
           <p
             id="email-mesaage"
             className={`error-message ${
-              touchedField.isTouchedEmail && formData.email < 1
+              (isEmailFocused && !isEmailValid) ||
+              (touchedField.isTouchedEmail && formData.email < 1)
                 ? "show"
                 : "hide"
             }`}
